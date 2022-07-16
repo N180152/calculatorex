@@ -1,0 +1,95 @@
+<html>
+<head>
+	<script>
+		function get(val)
+		{
+			document.getElementById("result").value+=val
+		}
+		function solve()
+		{
+			let x = document.getElementById("result").value
+			let y = eval(x)
+			document.getElementById("result").value = y
+		}
+		function clr()
+		{
+			document.getElementById("result").value = ""
+        }
+        function valid(){
+                q=document.getElementById("r").value;
+                var p=/[@$%^&*()_+!~!|}{:">?>?"}]/
+                if(p.test(q)){
+                    document.getElementById("result").style.border="2px solid red"
+                }
+                else{
+                    alert("Valid");
+                }
+            }
+	</script>
+	<style>
+	    body{
+                background-color: pink;
+                font-size: 30px;
+            }
+            div{
+                background-color: blue;
+                border: 2px solid red;
+                width: 30%;
+                height: 700px;
+                float: right;
+                margin-left: 200px;
+                margin-top: 200px;
+                margin-right: 200px;
+                margin-bottom: 200px;
+
+            }
+            input[type="button"]{
+                border: 2px solid;
+                margin: 5px 10px;
+                padding: 10px 25px;
+                background-color: aqua;
+                width: 70px;
+                height: 80px;
+            }
+            input[type="text"]{
+                border: 2px solid;
+                background-color: white;
+                font-size: 30px;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                width: 40%;
+                height: 40px;
+            }
+	</style>
+</head>
+<body>
+	<div>
+        <input type="text" id="result" style="width: 360px; height: 150px; "/>
+        <br>
+			<input type="button" value="1" onclick="get('1')"/>
+			<input type="button" value="2" onclick="get('2')"/>
+			<input type="button" value="3" onclick="get('3')"/>
+			<input type="button" value="+" onclick="get('+')" />
+            <br>
+			<input type="button" value="4" onclick="get('4')" />
+			<input type="button" value="5" onclick="get('5')"/>
+			<input type="button" value="6" onclick="get('6')"/>
+			<input type="button" value="-" onclick="get('-')"/>
+            <br>
+			<input type="button" value="7" onclick="get('7')"/>
+			<input type="button" value="8" onclick="get('8')"/>
+			<input type="button" value="9" onclick="get('9')"/>
+			<input type="button" value="*" onclick="get('*')" />
+            <br>
+			<input type="button" value="." onclick="get('.')"/>
+			<input type="button" value="0" onclick="get('0')"/>
+			<input type="button" value="=" onclick="solve()" id="r"/>
+			<input type="button" value="/" onclick="get('=')"/>
+            <br>
+            <input type="button" value="clear" onclick="clr()" />
+            <script>
+                var k=document.getElementById("r");
+                k.addEventListener('click',validate);
+            </script>
+    </div>
+</body>
+</html>
